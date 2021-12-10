@@ -1,6 +1,7 @@
 <?php
 
 include './config/config.php';
+include './helpers/function.php';
 include './views/includes/header.php';
 
 ?>

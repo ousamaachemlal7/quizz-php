@@ -15,7 +15,6 @@ function printArray($vars)
 {
 
     echo "<pre>";
-
     print_r($vars);
     echo '</pre>';
 
