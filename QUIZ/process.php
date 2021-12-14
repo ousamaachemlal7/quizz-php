@@ -1,6 +1,9 @@
 <?php
 include './init.php';
+if (!isset($_SESSION['score'])) {
 
+    $_SESSION['score'] = 0;
+}
 
 if (isset($_POST['submit'])) {
 
@@ -12,11 +15,15 @@ if (isset($_POST['submit'])) {
     $result = $connexion->query($sql);
     $total = $result->num_rows;
 
-    $statement = "SELECT text FROM `choice` WHERE question_id=$nbr AND is_correct=1";
+    $statement = "SELECT * FROM `choice` WHERE question_id=$nbr AND is_correct=1";
     $res = $connexion->query($statement);
     $data = $res->fetch_assoc();
 
+    if ($selected === $data['id']) {
 
+        $_SESSION['score']++;
+        
+    }
 
     if ($nbr === $total) {
 
@@ -25,9 +32,5 @@ if (isset($_POST['submit'])) {
         header('Location: question.php?n=' . $next);
     }
 
-    if ($selected === $data['text']) {
 
-        $_SESSION['is_correct'] = "correct";
-        $_SESSION['score']++;
-    }
 }

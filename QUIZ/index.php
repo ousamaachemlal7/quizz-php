@@ -12,14 +12,14 @@ include './views/includes/header.php';
         <p>This is a multiple choice Quiz</p>
 
         <ul>
-            <li><strong>Number of Questions : </strong>6</li>
+            <li><strong>Number of Questions : </strong>5</li>
             <li><strong>Type :</strong> Multiple Choice</li>
             <li><strong>Estimated time : </strong></li>
         </ul>
 
         <a href="question.php?n=1" class="start">Stat Quiz</a>
     </div>
-
+    
 </main>
 
 <?php include './views/includes/footer.php';  ?>

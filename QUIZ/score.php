@@ -13,6 +13,7 @@
 if (isset($_SESSION['score'])) {
 
     unset($_SESSION['score']);
+    session_destroy();
 }
 ?>
 

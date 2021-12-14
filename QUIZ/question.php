@@ -35,7 +35,7 @@ $choices = $connexion->query($state);
 
                 <?php while ($rows = $choices->fetch_assoc()) :  ?>
                     <li>
-                        <input type='radio' name="choice" value="<?= $rows['text'] ?>" />
+                        <input type='radio' name="choice" value="<?= $rows['id'] ?>" />
                         <?= $rows['text'] ?>
                     </li>
                 <?php endwhile;   ?>
@@ -48,13 +48,7 @@ $choices = $connexion->query($state);
 
         </form>
 
-        <?php
-        if (!isset($_SESSION['score']) && !isset($_SESSION['is_correct'])) {
-
-            $_SESSION['score'] = 0;
-        }
-
-        ?>
+     
     </div>
 </main>
 
